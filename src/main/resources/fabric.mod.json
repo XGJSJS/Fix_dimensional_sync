@@ -1,0 +1,29 @@
+{
+	"schemaVersion": 1,
+	"id": "fix_dimensional_sync",
+	"version": "${version}",
+	"name": "Fix Dimensional Sync",
+	"description": "Fix the issue where the mob effect and experiments is not synchronized to the client during cross-dimensional interactions.",
+	"authors": [
+		"XGJS"
+	],
+	"contact": {
+		"homepage": "https://space.bilibili.com/1328815668"
+	},
+	"license": "MIT",
+	"icon": "assets/fix_dimensional_sync/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.xgjs.fds.FixDimensionalSync"
+		]
+	},
+	"mixins": [
+		"fix_effects.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.14.21",
+		"minecraft": "~1.20.1",
+		"java": ">=17"
+	}
+}
