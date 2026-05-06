@@ -15,7 +15,7 @@ public class PlayerListMixin {
         ServerPlayer serverPlayer2 = cir.getReturnValue();
 
         serverPlayer2.getActiveEffectsMap().forEach((key, effect) -> {
-            serverPlayer2.connection.send(new ClientboundUpdateMobEffectPacket(serverPlayer2.getId(), effect));
+            serverPlayer2.connection.send(new ClientboundUpdateMobEffectPacket(serverPlayer2.getId(), effect, false));
         });
     }
 }

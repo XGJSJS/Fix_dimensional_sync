@@ -41,6 +41,6 @@ public class ServerPlayerMixin {
 	@Unique
 	private static void syncInfo(ServerPlayer serverPlayer) {
 		serverPlayer.connection.send(new ClientboundSetExperiencePacket(serverPlayer.experienceProgress, serverPlayer.totalExperience, serverPlayer.experienceLevel));
-		serverPlayer.getActiveEffectsMap().forEach((key, effect) -> serverPlayer.connection.send(new ClientboundUpdateMobEffectPacket(serverPlayer.getId(), effect)));
+		serverPlayer.getActiveEffectsMap().forEach((key, effect) -> serverPlayer.connection.send(new ClientboundUpdateMobEffectPacket(serverPlayer.getId(), effect, false)));
 	}
 }
