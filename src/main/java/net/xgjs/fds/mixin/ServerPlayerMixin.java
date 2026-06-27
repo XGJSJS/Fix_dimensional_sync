@@ -14,13 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(ServerPlayer.class)
 public class ServerPlayerMixin {
-	@Inject(
-			method = "restoreFrom",
-			at = @At(
-					value = "INVOKE",
-					target = "Lnet/minecraft/server/level/ServerPlayer;onUpdateAbilities()V",
-			shift = At.Shift.AFTER)
-	)
+	@Inject(method = "restoreFrom", at = @At("TAIL"))
 	private void afterPortalEntrancePos(ServerPlayer oldPlayer, boolean bl, CallbackInfo ci) {
 		ServerPlayer thisPlayer = (ServerPlayer) (Object) this;
 		if (bl) {
