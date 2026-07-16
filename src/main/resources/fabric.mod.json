@@ -23,7 +23,7 @@
 	],
 	"depends": {
 		"fabricloader": "*",
-		"minecraft": ">=1.16 <=1.17.1"
+		"minecraft": ">=1.14 <=1.15.2"
 	},
 	"conflicts": {
 		"dimensionalsyncfixes": "*"

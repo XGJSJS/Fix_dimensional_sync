@@ -5,6 +5,7 @@ import net.minecraft.network.protocol.game.ClientboundUpdateMobEffectPacket;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.level.dimension.DimensionType;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -23,7 +24,7 @@ public class ServerPlayerMixin {
 	}
 
 	@Inject(method = "changeDimension", at = @At("RETURN"))
-	private void afterChangeDimension(ServerLevel serverLevel, CallbackInfoReturnable<Entity> cir) {
+	private void afterChangeDimension(DimensionType dimensionType, CallbackInfoReturnable<Entity> cir) {
 		syncInfo((ServerPlayer) cir.getReturnValue());
 	}
 
